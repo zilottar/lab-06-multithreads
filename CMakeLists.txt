@@ -31,7 +31,7 @@ find_package(Boost CONFIG REQUIRED log thread filesystem system)
 
 add_library(picosha2 INTERFACE
 )
-add_library(header2 ${CMAKE_CURRENT_SOURCE_DIR}/include/header.h)
+
 add_library(logs INTERFACE
         )
 add_library(header INTERFACE
@@ -43,7 +43,7 @@ add_executable(source
 add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         )
-target_link_libraries(tests header)
+
 target_link_libraries(tests GTest::main)
 
 target_include_directories(source
@@ -64,6 +64,7 @@ target_include_directories(
 target_link_libraries(source picosha2 logs)
 target_link_libraries(logs INTERFACE Boost::log Boost::thread Boost::filesystem Boost::system)
 target_link_libraries(header INTERFACE Boost::log Boost::thread Boost::filesystem Boost::system)
+target_link_libraries(tests header)
 enable_testing()
 add_test(NAME unit_tests COMMAND tests) 
 
