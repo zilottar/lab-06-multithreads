@@ -1,8 +1,6 @@
 // Copyright 2018 Your Name <your_email>
 
 #include <gtest/gtest.h>
-#include <include/header.hpp>
-#include <include/logs.h>
 #include <thread>
 int main(int argc, char *argv[]) {
     unsigned int m = std::thread::hardware_concurrency();
