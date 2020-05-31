@@ -31,6 +31,7 @@ find_package(Boost CONFIG REQUIRED log thread filesystem system)
 
 add_library(picosha2 INTERFACE
 )
+add_library(header2 ${CMAKE_CURRENT_SOURCE_DIR}/include/header.hpp)
 add_library(logs INTERFACE
         )
 add_library(header INTERFACE
