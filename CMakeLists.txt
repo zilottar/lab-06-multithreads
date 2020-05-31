@@ -42,7 +42,7 @@ add_executable(source
 add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         )
-
+target_link_libraries(tests header)
 target_link_libraries(tests GTest::main)
 
 target_include_directories(source
